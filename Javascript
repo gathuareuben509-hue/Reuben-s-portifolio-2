@@ -1,0 +1,231 @@
+/* =========================================
+   REUBEN KIAI PORTFOLIO
+   JAVASCRIPT
+   ========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+
+    /* =====================================
+       MOBILE MENU
+       ===================================== */
+
+    const menuButton =
+        document.querySelector(".menu-button");
+
+    const navMenu =
+        document.querySelector(".nav-menu");
+
+
+    if (menuButton && navMenu) {
+
+        menuButton.addEventListener("click", () => {
+
+            navMenu.classList.toggle("open");
+
+        });
+
+
+        navMenu.querySelectorAll("a").forEach(link => {
+
+            link.addEventListener("click", () => {
+
+                navMenu.classList.remove("open");
+
+            });
+
+        });
+
+    }
+
+
+    /* =====================================
+       SCROLL REVEAL
+       ===================================== */
+
+    const revealElements =
+        document.querySelectorAll(
+            ".section, .intro, .project, .service-item, .process-card"
+        );
+
+
+    revealElements.forEach(element => {
+
+        element.classList.add("reveal");
+
+    });
+
+
+    const observer =
+        new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(
+                            entry.target
+                        );
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+    /* =====================================
+       IMAGE VIEWER
+       ===================================== */
+
+    const projects =
+        document.querySelectorAll(".project");
+
+
+    const viewer =
+        document.querySelector(".image-viewer");
+
+
+    const viewerImage =
+        viewer.querySelector("img");
+
+
+    const closeViewer =
+        document.querySelector(".close-viewer");
+
+
+    projects.forEach(project => {
+
+        const image =
+            project.querySelector("img");
+
+
+        if (!image) return;
+
+
+        image.addEventListener("click", () => {
+
+            viewerImage.src = image.src;
+
+            viewerImage.alt = image.alt;
+
+            viewer.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+
+        });
+
+    });
+
+
+    function closeImageViewer() {
+
+        viewer.classList.remove("active");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    closeViewer.addEventListener(
+        "click",
+        closeImageViewer
+    );
+
+
+    viewer.addEventListener(
+        "click",
+        (event) => {
+
+            if (event.target === viewer) {
+
+                closeImageViewer();
+
+            }
+
+        }
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        (event) => {
+
+            if (event.key === "Escape") {
+
+                closeImageViewer();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================
+       ACTIVE NAVIGATION
+       ===================================== */
+
+    const sections =
+        document.querySelectorAll("section[id]");
+
+
+    const navigationLinks =
+        document.querySelectorAll(".nav-menu a");
+
+
+    window.addEventListener("scroll", () => {
+
+        let currentSection = "";
+
+
+        sections.forEach(section => {
+
+            const sectionTop =
+                section.offsetTop - 150;
+
+
+            if (
+                window.scrollY >= sectionTop
+            ) {
+
+                currentSection =
+                    section.getAttribute("id");
+
+            }
+
+        });
+
+
+        navigationLinks.forEach(link => {
+
+            link.classList.remove("active");
+
+            if (
+                link.getAttribute("href") ===
+                "#" + currentSection
+            ) {
+
+                link.classList.add("active");
+
+            }
+
+        });
+
+    });
+
+
+});
