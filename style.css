@@ -1222,6 +1222,20 @@ footer p {
 .profile-image:hover {
     transform: scale(1.04);
     filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.65));
+}/* Soft profile glow */
+.profile-image {
+    animation: profileFloat 4s ease-in-out infinite,
+               profileGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes profileGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.35));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.60));
+    }
 }
 
 
