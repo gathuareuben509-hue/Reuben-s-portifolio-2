@@ -1236,6 +1236,19 @@ footer p {
     50% {
         filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.60));
     }
+}/* ================= PROFILE PICTURE STYLE ================= */
+
+.profile-image {
+    border-radius: 50%;
+    border: 3px solid rgba(139, 92, 246, 0.75);
+    object-fit: cover;
+    box-shadow:
+        0 0 0 5px rgba(139, 92, 246, 0.08),
+        0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+.profile-image:hover {
+    transform: scale(1.04);
 }
 
 
