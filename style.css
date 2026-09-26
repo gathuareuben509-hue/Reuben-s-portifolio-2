@@ -1203,26 +1203,4 @@ footer p {
 
     }
 
-}/* ================= PROFILE PICTURE ANIMATION ================= */
-
-.profile-image {
-    animation: profileFloat 4s ease-in-out infinite;
-    transition: transform 0.4s ease, filter 0.4s ease;
-    filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.35));
-}
-
-@keyframes profileFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-7px);
-    }
-}
-
-.profile-image:hover {
-    transform: scale(1.04);
-    filter: drop-shadow(0 0 18px rgba(139, 92, 246, 0.65));
-}
 
