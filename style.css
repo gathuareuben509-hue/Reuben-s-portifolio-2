@@ -1249,6 +1249,30 @@ footer p {
 
 .profile-image:hover {
     transform: scale(1.04);
+}/* ================= HERO TEXT ANIMATION ================= */
+
+.hero h1 {
+    animation: heroFadeUp 0.9s ease-out both;
+}
+
+.hero p {
+    animation: heroFadeUp 1.1s ease-out both;
+}
+
+.hero .hero-buttons {
+    animation: heroFadeUp 1.3s ease-out both;
+}
+
+@keyframes heroFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
