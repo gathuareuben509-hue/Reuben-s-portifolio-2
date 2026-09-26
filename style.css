@@ -1391,6 +1391,55 @@ header nav a:hover::after {
 
 .service-card:hover::before {
     left: 0;
+}/* ================= CONTACT SECTION POLISH ================= */
+
+.contact-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(139, 92, 246, 0.10);
+    filter: blur(80px);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.contact-content {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-content .small-title {
+    color: #8b5cf6;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.contact-content h2 {
+    margin-bottom: 18px;
+}
+
+.contact-content p {
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.contact-content a,
+.contact-content button {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-content a:hover,
+.contact-content button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(139, 92, 246, 0.30);
 }
 
 
