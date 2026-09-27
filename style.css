@@ -1508,6 +1508,48 @@ header nav a:hover::after {
     background: rgba(139, 92, 246, 0.15);
     border-color: #8b5cf6;
     box-shadow: 0 8px 20px rgba(139, 92, 246, 0.20);
+}/* ================= FIX SOCIAL LINKS IN CONTACT ================= */
+
+.contact-content .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.contact-content .social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 120px;
+    padding: 11px 20px;
+
+    background: transparent !important;
+    border: 1px solid rgba(139, 92, 246, 0.45);
+    border-radius: 30px;
+
+    color: #ffffff !important;
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    box-shadow: none !important;
+
+    transition: transform 0.3s ease,
+                background 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.contact-content .social-links a:hover {
+    transform: translateY(-3px);
+    background: rgba(139, 92, 246, 0.15) !important;
+    border-color: #8b5cf6;
+    box-shadow: 0 8px 20px rgba(139, 92, 246, 0.20) !important;
 }
 
 
