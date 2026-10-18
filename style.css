@@ -1160,7 +1160,7 @@ footer p {
     }
 }
 
-    }/* ================= PROFILE PICTURE ANIMATION ================= */
+/* ================= PROFILE PICTURE ANIMATION ================= */
 
 .profile-image {
     animation: profileFloat 4s ease-in-out infinite;
